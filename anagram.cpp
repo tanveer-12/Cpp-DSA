@@ -39,6 +39,5 @@ int main()
     else{
         std::cout<<"The strings are not anagrams";
     }
-    
     return 0;
 }
