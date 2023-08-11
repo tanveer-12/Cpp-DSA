@@ -1,4 +1,4 @@
-//Sort an array consisting of only 0s and 1s
+//Sort an array consisting of only 0s and 1s (normal approach)
 #include <iostream>
 #include <vector>
 
