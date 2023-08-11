@@ -41,11 +41,11 @@ void sortZeroesandOnes(std::vector<int> &v)
         }
         if(v[leftpointer] == 0)
         {
-            v[leftpointer]++;
+            leftpointer++;
         }
         if(v[rightpointer]==1)
         {
-            v[rightpointer]--;
+            rightpointer--;
         }
     }
     return;
