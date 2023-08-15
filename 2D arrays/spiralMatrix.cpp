@@ -57,6 +57,7 @@ void spiralOrder(std::vector<std::vector<int>> &matrix)
             }
             top++;
         }
+
         //top -> bottom
         else if(direction == 1)
         {
@@ -66,6 +67,7 @@ void spiralOrder(std::vector<std::vector<int>> &matrix)
             }
             right--;
         }
+
         //right -> left
         else if(direction == 2)
         {
@@ -75,6 +77,7 @@ void spiralOrder(std::vector<std::vector<int>> &matrix)
             }
             bottom--;
         }
+        
         //bottom -> top
         else 
         {
