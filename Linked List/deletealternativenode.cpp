@@ -49,7 +49,7 @@ class LinkedList
             std::cout<<temp->val<<"->";
             temp = temp->next;
         }
-        std::cout<<"NULL";
+        std::cout<<"NULL"<<std::endl;
     }
 };
 
@@ -59,7 +59,7 @@ void deleteAlternateNodes(Node* &head)
     while(current_node != NULL && current_node->next != NULL)
     {
         Node *temp = current_node->next;    //node to be deleted
-        current_node = current_node->next->next;
+        current_node->next = current_node->next->next;
         free(temp);
         current_node = current_node->next;
     }
