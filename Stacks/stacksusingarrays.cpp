@@ -33,7 +33,7 @@ class Stack
             std::cout<<"Underflow\n";
             return INT_MIN;
         }
-        this->top--;     //remove access to the top element that means we remove the element from stack
+        return this->top--;   //remove access to the top element that means we remove the element from stack
     }
 
     int getTop()
@@ -73,5 +73,8 @@ int main()
     st.push(5);
     std::cout<<st.getTop()<<"\n";
     st.push(8);
+    st.pop();
+    st.pop();
+    std::cout<<st.getTop()<<"\n";
     return 0;
 }
