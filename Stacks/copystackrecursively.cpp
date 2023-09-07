@@ -1,5 +1,6 @@
 //copy contents from one stack to another in same order
 // RECURSIVELY
+//copyonestacktoanother.cpp is its iterative solution
 
 #include <iostream>
 #include <stack>
