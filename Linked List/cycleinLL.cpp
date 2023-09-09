@@ -68,6 +68,7 @@ bool detectCycle(Node *head)
 
         if(slow == fast)
         {
+            std::cout<<slow->val<<std::endl;
             return true;
         }
     }
