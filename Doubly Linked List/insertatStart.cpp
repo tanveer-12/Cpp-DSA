@@ -49,7 +49,7 @@ class DoublyLinkedList
         Node *temp = head;
         while(temp != NULL)
         {
-            std::cout<<temp->val<<"->";
+            std::cout<<temp->val<<" <-> ";
             temp = temp->next;
         }
         std::cout<<"NULL"<<std::endl;
