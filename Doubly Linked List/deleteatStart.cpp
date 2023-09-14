@@ -27,19 +27,20 @@ class DoublyLinkedList
         tail = NULL;
     }
 
-    void insertatEnd(int val)
+    void insertatStart(int val)
     {
         Node *new_node = new Node(val);
-        if(tail == NULL)
+        if (head == NULL)     //if LL is empty
         {
             head = new_node;
             tail = new_node;
             return;
         }
+        //when LL is not empty then,
 
-        tail->next = new_node;
-        new_node->prev = tail;
-        tail = new_node;
+        new_node->next = head;
+        head->prev = new_node;
+        head = new_node;
         return;
     }
 
@@ -78,12 +79,12 @@ class DoublyLinkedList
 int main()
 {
     DoublyLinkedList dll;
-    dll.insertatEnd(10);
-    dll.insertatEnd(9);
-    dll.insertatEnd(8);
-    dll.insertatEnd(7);
-    dll.insertatEnd(6);
-    dll.insertatEnd(5);
+    dll.insertatStart(1);
+    dll.insertatStart(2);
+    dll.insertatStart(3);
+    dll.insertatStart(4);
+    dll.insertatStart(5);
+    dll.insertatStart(6);
     dll.display();
     dll.deleteatStart();
     dll.display();
