@@ -1,5 +1,6 @@
 //Given Q queries, check if the given number is present in the array or not
 //NOTE: Value of all the elements in the array is less than 10 to the power 5
+
 #include <iostream>
 #include <vector>
 int main()
@@ -8,6 +9,7 @@ int main()
     std::cout<<"Enter array size: ";
     std::cin>>n;
 
+    //inserting values into the array
     std::vector<int> v(n);
     for(int i=0; i<n; i++)
     {
