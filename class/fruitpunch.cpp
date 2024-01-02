@@ -108,3 +108,78 @@ void showSelection()
     std::cout << "4 for fruit punch" << std::endl;
     std::cout << "9 to exit" << std::endl;
 }       //end showSelection
+
+void sellProduct(dispencerType& product, cashRegister& pCounter)
+{
+    int amount;     //variable to hold the amount entered
+    int amount2;    //variable to hold the extra amount needed
+
+    if(product.getNoOfItems() > 0)  //if the dispencer is not empty
+    {
+        std::cout<<"Please Deposit "<<product.getCost()<< " cents"<<std::endl;
+        std::cin>>amount;
+
+        if(amount < product.getCost())
+        {
+            std::cout<<"Please deposit another "<<product.getCost() - amount<<" cents"<<std::endl;
+            std::cin>>amount2;
+            amount = amount + amount2;
+        } 
+
+        if(amount >= product.getCost())
+        {
+            pCounter.acceptAmount(amount);
+            product.makeSale();
+            std::cout<<"Collect your item at the bottom  and enjoy."<< std::endl;
+        }
+        else
+        {
+            std::cout<<"This amount is not enough. "<<"Collect what you deposited."<<std::endl;
+        }
+        std::cout << "*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*"<< std::endl << std::endl;
+    }
+    else
+    std::cout << "Sorry, this item is sold out." << std::endl;
+}
+
+int main()
+{
+    cashRegister counter;
+    dispencerType appleJuice(100, 50);
+    dispencerType orangeJuice(100, 65);
+    dispencerType mangoLassi(75, 45);
+    dispencerType fruitPunch(100, 85);
+
+    int choice; //variable to hold the selection
+
+    showSelection();
+    std::cin>>choice;
+
+    while(choice != 9)
+    {
+        switch(choice)
+        {
+            case 1:
+            sellProduct(appleJuice, counter);
+            break;
+
+            case 2:
+            sellProduct(orangeJuice, counter);
+            break;
+
+            case 3:
+            sellProduct(mangoLassi, counter);
+            break;
+
+            case 4:
+            sellProduct(fruitPunch, counter);
+            break;
+
+            default:
+            std::cout<< "Invalid Selection."<< std::endl;
+        }
+        showSelection();
+        std::cin>>choice;
+    }
+    return 0;
+}
